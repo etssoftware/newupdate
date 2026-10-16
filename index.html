@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram: Join Group Chat</title>
+    
+    <!-- Meta Pixel Code (Subscribe Event Only) -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e);
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://facebook.net');
+    
+    // ⚠️ यहाँ 'YOUR_PIXEL_ID' को हटाकर अपनी असली 15-अंकों की पिक्सेल आईडी डाल दें
+    fbq('init', 'YOUR_PIXEL_ID'); 
+    fbq('track', 'Subscribe'); // PageView हटा दिया गया है, केवल Subscribe इवेंट फायर होगा
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f5;
+            background-image: url('https://telegram.org');
+            background-repeat: repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .tg-header {
+            width: 100%;
+            background: #ffffff;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        .tg-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2481cc;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .tg-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #2481cc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+        }
+        .download-btn {
+            background: #2481cc;
+            color: white;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .card-container {
+            margin-top: 110px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 420px;
+            padding: 0 16px;
+        }
+        .tg-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+        /* क्लीन ब्लैक लोगो - सिर्फ नाम के साथ */
+        .app-logo {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            background: #0f141c;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid #1e2530;
+            padding: 10px;
+            line-height: 1.3;
+        }
+        
+        h2 { font-size: 22px; color: #000000; margin: 0 0 6px 0; font-weight: 700; }
+        .subscribers { color: #707579; font-size: 14px; margin-bottom: 24px; }
+        .channel-details { text-align: left; margin: 0 auto 28px; font-size: 15px; line-height: 1.5; color: #000000; max-width: 320px; }
+        .channel-details p { margin: 10px 0; display: flex; align-items: flex-start; gap: 8px; }
+        
+        .join-btn {
+            display: block;
+            background: #2481cc;
+            color: white;
+            text-decoration: none;
+            padding: 13px;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto 20px;
+            transition: background 0.2s;
+        }
+        .join-btn:hover { background: #1a659e; }
+        .invite-msg { color: #707579; font-size: 14px; line-height: 1.4; max-width: 280px; margin: 0 auto; }
+        .invite-msg strong { color: #000000; }
+    </style>
+
+    <!-- 🚀 सुपर स्मूथ वन-टाइम ट्रिगर स्क्रिप्ट (No Flicker) -->
+    <script>
+        window.onload = function() {
+            // बिना किसी लूप या डिले के सिर्फ एक बार सीधे ऐप लिंक को ट्रिगर करें
+            window.location.href = "tg://join?invite=dKaYmM-WYSMyYzc1";
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Top Telegram Bar -->
+    <div class="tg-header">
+        <a href="#" class="tg-brand">
+            <div class="tg-logo-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </div>
+            Telegram
+        </a>
+        <a href="tg://join?invite=dKaYmM-WYSMyYzc1" class="download-btn">Download</a>
+    </div>
+
+    <!-- Main Card Container -->
+    <div class="card-container">
+        <div class="tg-card">
+            
+            <!-- अपडेटेड क्लीन लोगो: सिर्फ 'Trading Software' -->
+            <div class="app-logo">
+                Trading Software
+            </div>
+            
+            <h2>Trading Software</h2>
+            <div class="subscribers">28 580 subscribers</div>
+            
+            <div class="channel-details">
+                <p>📊 EXCELLENT & Easy Market Analysis Tool</p>
+                <p>⚡ TradingView Compatible</p>
+                <p>📱 Mobile & Laptop Support</p>
+                <p>📈 Easy Multi-Market Analysis...</p>
+            </div>
+
+            <a href="tg://join?invite=dKaYmM-WYSMyYzc1" class="join-btn">Join Channel</a>
+            
+            <p class="invite-msg">You are invited to the channel <strong>Trading Software</strong>. Click above to join.</p>
+        </div>
+    </div>
+
+</body>
+</html>
